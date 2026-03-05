@@ -21,6 +21,9 @@ plugins=(git vi-mode zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
+export EDITOR=nvim
+export VISUAL=nvim
+
 alias zshrc="vim ~/.zshrc"
 alias source_zshrc="source ~/.zshrc"
 alias vim="nvim"
