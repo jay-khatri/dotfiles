@@ -14,7 +14,7 @@ end
 
 local Plug = vim.fn["plug#"]
 vim.call("plug#begin")
-Plug("folke/tokyonight.nvim")
+Plug("EdenEast/nightfox.nvim")
 Plug("karb94/neoscroll.nvim")
 Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate" })
 Plug("nvim-tree/nvim-web-devicons")
@@ -23,8 +23,7 @@ Plug("nvim-lua/plenary.nvim")
 Plug("nvim-telescope/telescope.nvim")
 vim.call("plug#end")
 
-require("tokyonight").setup({ style = "night" })
-vim.cmd.colorscheme("tokyonight")
+vim.cmd.colorscheme("carbonfox")
 
 vim.opt.clipboard = "unnamedplus"
 
