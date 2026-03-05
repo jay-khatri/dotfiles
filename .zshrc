@@ -10,12 +10,14 @@ export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
 
+export PATH=$PATH:$(go env GOPATH)/bin
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git vi-mode zsh-autosuggestions)
+plugins=(git zsh-vi-mode zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
