@@ -23,6 +23,7 @@ Plug("nvim-lua/plenary.nvim")
 Plug("nvim-telescope/telescope.nvim")
 vim.call("plug#end")
 
+require("tokyonight").setup({ style = "night" })
 vim.cmd.colorscheme("tokyonight")
 
 vim.opt.clipboard = "unnamedplus"
