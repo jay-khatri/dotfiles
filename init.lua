@@ -14,6 +14,7 @@ end
 
 local Plug = vim.fn["plug#"]
 vim.call("plug#begin")
+Plug("folke/tokyonight.nvim")
 Plug("karb94/neoscroll.nvim")
 Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate" })
 Plug("nvim-tree/nvim-web-devicons")
@@ -21,6 +22,8 @@ Plug("nvim-tree/nvim-tree.lua")
 Plug("nvim-lua/plenary.nvim")
 Plug("nvim-telescope/telescope.nvim")
 vim.call("plug#end")
+
+vim.cmd.colorscheme("tokyonight")
 
 vim.opt.clipboard = "unnamedplus"
 
