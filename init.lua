@@ -50,6 +50,6 @@ end
 
 local ok_telescope, telescope_builtin = pcall(require, "telescope.builtin")
 if ok_telescope then
-  vim.keymap.set("n", "<C-p>", telescope_builtin.find_files, { desc = "Find files" })
+  vim.keymap.set("n", "<C-o>", telescope_builtin.find_files, { desc = "Find files" })
   vim.keymap.set("n", "<C-f>", telescope_builtin.live_grep, { desc = "Search in files" })
 end
