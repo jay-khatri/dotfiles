@@ -21,6 +21,7 @@ Plug("nvim-tree/nvim-web-devicons")
 Plug("nvim-tree/nvim-tree.lua")
 Plug("nvim-lua/plenary.nvim")
 Plug("nvim-telescope/telescope.nvim")
+Plug("lewis6991/gitsigns.nvim")
 vim.call("plug#end")
 
 vim.cmd.colorscheme("carbonfox")
@@ -52,4 +53,9 @@ local ok_telescope, telescope_builtin = pcall(require, "telescope.builtin")
 if ok_telescope then
   vim.keymap.set("n", "<C-o>", telescope_builtin.find_files, { desc = "Find files" })
   vim.keymap.set("n", "<C-f>", telescope_builtin.live_grep, { desc = "Search in files" })
+end
+
+local ok_gitsigns, gitsigns = pcall(require, "gitsigns")
+if ok_gitsigns then
+  gitsigns.setup({ base = "main" })
 end
