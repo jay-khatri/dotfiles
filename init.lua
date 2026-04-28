@@ -55,7 +55,7 @@ end
 local ok_telescope, telescope_builtin = pcall(require, "telescope.builtin")
 if ok_telescope then
   vim.keymap.set("n", "<leader>ff", telescope_builtin.find_files, { desc = "Find files" })
-  vim.keymap.set("n", "<C-f>", telescope_builtin.live_grep, { desc = "Search in files" })
+  vim.keymap.set("n", "<leader>fg", telescope_builtin.live_grep, { desc = "Search in files" })
 end
 
 local ok_gitsigns, gitsigns = pcall(require, "gitsigns")
