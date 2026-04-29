@@ -3,6 +3,9 @@
 --   brew install ripgrep                                 (for Telescope live grep)
 --   Set iTerm2 font: Settings → Profiles → Text → "JetBrainsMono Nerd Font"
 
+-- Set leader to space. Must come before any <leader>-prefixed keymap.
+vim.g.mapleader = " "
+
 local plug_path = vim.fn.stdpath("data") .. "/site/autoload/plug.vim"
 if vim.fn.filereadable(plug_path) == 0 then
   vim.fn.system({
@@ -51,8 +54,8 @@ end
 
 local ok_telescope, telescope_builtin = pcall(require, "telescope.builtin")
 if ok_telescope then
-  vim.keymap.set("n", "<C-o>", telescope_builtin.find_files, { desc = "Find files" })
-  vim.keymap.set("n", "<C-f>", telescope_builtin.live_grep, { desc = "Search in files" })
+  vim.keymap.set("n", "<leader>ff", telescope_builtin.find_files, { desc = "Find files" })
+  vim.keymap.set("n", "<leader>fg", telescope_builtin.live_grep, { desc = "Search in files" })
 end
 
 local ok_gitsigns, gitsigns = pcall(require, "gitsigns")
