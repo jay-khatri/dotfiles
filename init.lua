@@ -19,7 +19,7 @@ local Plug = vim.fn["plug#"]
 vim.call("plug#begin")
 Plug("EdenEast/nightfox.nvim")
 Plug("karb94/neoscroll.nvim")
-Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate" })
+Plug("nvim-treesitter/nvim-treesitter", { ["branch"] = "master", ["do"] = ":TSUpdate" })
 Plug("nvim-tree/nvim-web-devicons")
 Plug("nvim-tree/nvim-tree.lua")
 Plug("nvim-lua/plenary.nvim")
