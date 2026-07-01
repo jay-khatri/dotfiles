@@ -52,6 +52,24 @@ if ok_tree then
   })
 end
 
+-- Exclude noise from both find_files (names) and live_grep (contents).
+-- These are Lua patterns matched against each path, so literal dots are "%.".
+local ok_tel, telescope = pcall(require, "telescope")
+if ok_tel then
+  telescope.setup({
+    defaults = {
+      file_ignore_patterns = {
+        "venv/", "%.venv/",          -- python virtualenvs
+        "node_modules/",             -- js/ts dependencies
+        "%.git/",                    -- git internals
+        "__pycache__/", "%.pyc",     -- python bytecode
+        "%.png", "%.jpg", "%.jpeg", "%.gif", "%.svg",  -- images
+        "%.lock",                    -- lockfiles (package-lock, poetry.lock, ...)
+      },
+    },
+  })
+end
+
 local ok_telescope, telescope_builtin = pcall(require, "telescope.builtin")
 if ok_telescope then
   vim.keymap.set("n", "<leader>ff", telescope_builtin.find_files, { desc = "Find files" })
